@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class JobBoardManager : MonoBehaviour
 {
@@ -10,29 +11,33 @@ public class JobBoardManager : MonoBehaviour
     [SerializeField] private Transform vacanciesContainer;
     [SerializeField] private GameObject vacancyPrefab;
     [SerializeField] private float checkNewVacancyInterval = 10f;
+    [SerializeField] private GameObject JobBoardWindow;
 
     private List<VacancyData> availableVacancies = new List<VacancyData>();
     private List<VacancyData> activeVacancies = new List<VacancyData>();
 
     public delegate void VacancyResponseEvent(bool isSuccess, VacancyData vacancy);
-    public event VacancyResponseEvent OnVacancyResponded;
+    public event Action<bool>  OnVacancyResponded;
 
     private void Start()
     {
-        // Копируем все вакансии в доступные
         availableVacancies.AddRange(allVacancies);
 
-        // Запускаем корутину для появления новых вакансий
+        StartCoroutine(NewVacanciesRoutine());
+    }
+
+    public void StartNewVacanciesRoutine()
+    {
         StartCoroutine(NewVacanciesRoutine());
     }
 
     private IEnumerator NewVacanciesRoutine()
     {
-        while (true)
+        while (JobBoardWindow.activeInHierarchy)
         {
             yield return new WaitForSeconds(checkNewVacancyInterval);
 
-            if (availableVacancies.Count > 0 && Random.value > 0.3f) // 30% шанс появления новой вакансии
+            if (availableVacancies.Count > 0 && UnityEngine.Random.value > 0.3f) // 30% шанс появления новой вакансии
             {
                 AddRandomVacancy();
             }
@@ -43,9 +48,8 @@ public class JobBoardManager : MonoBehaviour
     {
         if (availableVacancies.Count == 0) return;
 
-        int randomIndex = Random.Range(0, availableVacancies.Count);
+        int randomIndex = UnityEngine.Random.Range(0, availableVacancies.Count);
         VacancyData vacancy = availableVacancies[randomIndex];
-        // Создаем объект вакансии на доске
         GameObject vacancyObj = Instantiate(vacancyPrefab, vacanciesContainer);
         SetupVacancyUI(vacancyObj, vacancy);
 
@@ -62,34 +66,28 @@ public class JobBoardManager : MonoBehaviour
             return;
         }
 
-        // Настраиваем UI элементы
         vacancyUI.jobTitle.text = vacancy.jobTitle;
         vacancyUI.jobDescription.text = vacancy.jobDescription;
         vacancyUI.companyLogo.sprite = vacancy.companyLogo;
 
-        // Настраиваем кнопку отклика
         vacancyUI.respondButton.onClick.RemoveAllListeners();
         vacancyUI.respondButton.onClick.AddListener(() => RespondToVacancy(vacancy, vacancyObj));
     }
 
     private void RespondToVacancy(VacancyData vacancy, GameObject vacancyObj)
     {
-        // Удаляем вакансию с доски
         activeVacancies.Remove(vacancy);
         Destroy(vacancyObj);
 
-        // Определяем успешность отклика
-        bool isSuccess = Random.value <= vacancy.successChance;
-
-        // Вызываем событие отклика
-        OnVacancyResponded?.Invoke(isSuccess, vacancy);
+        bool isSuccess = UnityEngine.Random.value <= vacancy.successChance;
+        
+        OnVacancyResponded?.Invoke(isSuccess);
 
         Debug.Log($"Responded to {vacancy.jobTitle}. Success: {isSuccess}");
     }
 
     public void ResetJobBoard()
-    {
-        // Очищаем доску и сбрасываем доступные вакансии
+    { 
         foreach (Transform child in vacanciesContainer)
         {
             Destroy(child.gameObject);
