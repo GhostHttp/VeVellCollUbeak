@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      beautiful-view-stars-night-sky_0: 2935544551324604795
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
