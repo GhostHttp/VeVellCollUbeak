@@ -4,34 +4,38 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private DialogueData dialogueData;
+    [SerializeField] private DialogueData[] dialogueData;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI questionText;
     [SerializeField] private Button[] answerButtons;
 
     private int currentNodeIndex = 0;
+    private int currentDialogeData = 0;
 
     private void Start()
     {
-        if (dialogueData == null || dialogueData.dialogueNodes.Length == 0)
+        if (dialogueData == null || currentDialogeData > dialogueData.Length)
         {
             Debug.LogError("Dialogue data is missing or empty!");
             return;
-        }
+        }     
+    }
 
+    public void StartDialogue()
+    {
         ShowDialogueNode(0);
     }
 
     public void ShowDialogueNode(int nodeIndex)
     {
-        if (nodeIndex < 0 || nodeIndex >= dialogueData.dialogueNodes.Length)
+        if (nodeIndex < 0 || nodeIndex >= dialogueData[currentDialogeData].dialogueNodes.Length)
         {
             Debug.LogError("Invalid node index!");
             return;
         }
 
         currentNodeIndex = nodeIndex;
-        var currentNode = dialogueData.dialogueNodes[nodeIndex];
+        var currentNode = dialogueData[currentDialogeData].dialogueNodes[nodeIndex];
 
         // Устанавливаем вопрос
         questionText.text = currentNode.question;
@@ -66,7 +70,7 @@ public class DialogueManager : MonoBehaviour
 
         // Простой пример - переход к следующему вопросу
         int nextNodeIndex = currentNodeIndex + 1;
-        if (nextNodeIndex < dialogueData.dialogueNodes.Length)
+        if (nextNodeIndex < dialogueData[currentDialogeData].dialogueNodes.Length)
         {
             ShowDialogueNode(nextNodeIndex);
         }
@@ -78,6 +82,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        currentDialogeData++;
         dialoguePanel.SetActive(false);
         Debug.Log("Dialogue ended");
     }
