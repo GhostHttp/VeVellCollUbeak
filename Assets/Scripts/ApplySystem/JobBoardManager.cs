@@ -4,20 +4,22 @@ using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using DG.Tweening;
 
 public class JobBoardManager : MonoBehaviour
 {
     [SerializeField] private VacancyData[] allVacancies;
     [SerializeField] private Transform vacanciesContainer;
-    [SerializeField] private GameObject vacancyPrefab;
     [SerializeField] private float checkNewVacancyInterval = 10f;
     [SerializeField] private GameObject JobBoardWindow;
+    [Space]
 
     private List<VacancyData> availableVacancies = new List<VacancyData>();
-    private List<VacancyData> activeVacancies = new List<VacancyData>();
+    public List<VacancyData> activeVacancies = new List<VacancyData>();
 
     public delegate void VacancyResponseEvent(bool isSuccess, VacancyData vacancy);
     public event Action<bool>  OnVacancyResponded;
+    public event Action<GameObject> OnVacancyCreated;
 
     private void Start()
     {
@@ -50,10 +52,11 @@ public class JobBoardManager : MonoBehaviour
 
         int randomIndex = UnityEngine.Random.Range(0, availableVacancies.Count);
         VacancyData vacancy = availableVacancies[randomIndex];
-        GameObject vacancyObj = Instantiate(vacancyPrefab, vacanciesContainer);
+        GameObject vacancyObj = Instantiate(vacancy.vacancyPrefab, vacanciesContainer);
         SetupVacancyUI(vacancyObj, vacancy);
 
         activeVacancies.Add(vacancy);
+        OnVacancyCreated?.Invoke(vacancyObj);
         //availableVacancies.RemoveAt(randomIndex);
     }
 
@@ -77,8 +80,8 @@ public class JobBoardManager : MonoBehaviour
     private void RespondToVacancy(VacancyData vacancy, GameObject vacancyObj)
     {
         activeVacancies.Remove(vacancy);
-        Destroy(vacancyObj);
-
+        // Destroy(vacancyObj);
+        StartCoroutine(RespondAnimation(vacancyObj));
         bool isSuccess = UnityEngine.Random.value <= vacancy.successChance;
         
         OnVacancyResponded?.Invoke(isSuccess);
@@ -96,5 +99,13 @@ public class JobBoardManager : MonoBehaviour
         availableVacancies.Clear();
         availableVacancies.AddRange(allVacancies);
         activeVacancies.Clear();
+    }
+
+    private IEnumerator RespondAnimation(GameObject item)
+    {
+        var fadetime = 0.5f;
+        item.transform.DOScale(0f, fadetime).SetEase(Ease.OutFlash);
+        yield return new WaitForSeconds(fadetime);
+        Destroy(item);
     }
 }

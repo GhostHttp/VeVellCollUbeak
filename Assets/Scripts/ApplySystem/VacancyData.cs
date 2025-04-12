@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Vacancy", menuName = "Job System/Vacancy")]
 public class VacancyData : ScriptableObject
 {
+    public GameObject vacancyPrefab;
     public string jobTitle;
     [TextArea(3, 5)] public string jobDescription;
     public Sprite companyLogo;

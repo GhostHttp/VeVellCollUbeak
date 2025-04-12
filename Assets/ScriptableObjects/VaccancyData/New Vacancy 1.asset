@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402074ddc2d8c21459b510daa5750478, type: 3}
   m_Name: New Vacancy 1
   m_EditorClassIdentifier: 
+  vacancyPrefab: {fileID: 5444163395496759503, guid: 185f84d0965d68e429289fdd9bcfcec7, type: 3}
   jobTitle: Test2
   jobDescription: lol2
   companyLogo: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
