@@ -4072,6 +4072,7 @@ GameObject:
   - component: {fileID: 1474458835}
   - component: {fileID: 1474458837}
   - component: {fileID: 1474458836}
+  - component: {fileID: 1474458838}
   m_Layer: 5
   m_Name: ProgressBarBackground
   m_TagString: Untagged
@@ -4138,6 +4139,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474458834}
   m_CullTransparentMesh: 1
+--- !u!114 &1474458838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474458834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a54ba3980c44e40ada2f1a9996e572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragRectTransform: {fileID: 1474458835}
+  canvas: {fileID: 326268823}
 --- !u!1 &1497288528
 GameObject:
   m_ObjectHideFlags: 0
