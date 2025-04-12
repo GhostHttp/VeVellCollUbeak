@@ -1,0 +1,34 @@
+{
+    "name": "InputActionGloball",
+    "maps": [
+        {
+            "name": "Click",
+            "id": "984587a7-be69-481a-abaf-fdd56ab52f4d",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "fdf74f38-ea10-4010-a742-a9ef93ff2362",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5094bf3c-7169-4739-8987-aebcfcc025ba",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
