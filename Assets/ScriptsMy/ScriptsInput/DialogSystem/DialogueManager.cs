@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     private int currentDialogeData = 0;
 
     public event Action<bool> OnAnswerSelected;
+    public event Action OnDialogueEnded;
 
     private void Start()
     {
@@ -112,6 +113,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        OnDialogueEnded?.Invoke();
         currentActiveCalls--;
         dialoguePanel.SetActive(false);
         Debug.Log("Dialogue ended");
