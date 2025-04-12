@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
-public class StartGame : MonoBehaviour, IPointerClickHandler
+public class buttoOpenScene : MonoBehaviour, IPointerClickHandler
 {
     public string nameSceneToLoad;
     SceneLoadManager loadManager;
