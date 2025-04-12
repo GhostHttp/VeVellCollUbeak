@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class DialogueManager : MonoBehaviour
 
     private int currentNodeIndex = 0;
     private int currentDialogeData = 0;
+
+    public event Action<bool> OnAnswerSelected;
 
     private void Start()
     {
@@ -48,7 +51,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogueNode(int nodeIndex)
     {
-        var randomDialoge = Random.Range(0, dialogueData.Length);
+        var randomDialoge = UnityEngine.Random.Range(0, dialogueData.Length);
         if (currentDialogeData > dialogueData.Length -1)
         {
             return;
@@ -76,16 +79,25 @@ public class DialogueManager : MonoBehaviour
 
             answerButtons[i].onClick.RemoveAllListeners();
             int answerIndex = i;
-            answerButtons[i].onClick.AddListener(() => OnAnswerSelected(answerIndex, randomDialoge));
+            answerButtons[i].onClick.AddListener(() => SelectAnswer(answerIndex, randomDialoge));
         }
 
         dialoguePanel.SetActive(true);
     }
 
-    private void OnAnswerSelected(int answerIndex, int dialogueIndex)
+    private void SelectAnswer(int answerIndex, int dialogueIndex)
     {
 
         Debug.Log($"Selected answer: {answerIndex} for question: {currentNodeIndex}");
+        if (answerIndex == dialogueData[dialogueIndex].dialogueNodes[currentNodeIndex].rightAnswerIndex)
+        {
+            Debug.Log("Правильный ответ");
+            OnAnswerSelected?.Invoke(true);
+        }
+        else 
+        {
+            OnAnswerSelected?.Invoke(false);
+        }
 
         int nextNodeIndex = currentNodeIndex + 1;
         if (nextNodeIndex < dialogueData[dialogueIndex].dialogueNodes.Length)

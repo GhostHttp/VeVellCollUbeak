@@ -1,10 +1,8 @@
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
-using DG.Tweening;
+using UnityEngine;
 
 public class JobBoardManager : MonoBehaviour
 {
@@ -18,7 +16,7 @@ public class JobBoardManager : MonoBehaviour
     public List<VacancyData> activeVacancies = new List<VacancyData>();
 
     public delegate void VacancyResponseEvent(bool isSuccess, VacancyData vacancy);
-    public event Action<bool>  OnVacancyResponded;
+    public event Action<bool> OnVacancyResponded;
     public event Action<GameObject> OnVacancyCreated;
 
     private void Start()
@@ -83,14 +81,14 @@ public class JobBoardManager : MonoBehaviour
         // Destroy(vacancyObj);
         StartCoroutine(RespondAnimation(vacancyObj));
         bool isSuccess = UnityEngine.Random.value <= vacancy.successChance;
-        
+
         OnVacancyResponded?.Invoke(isSuccess);
 
         Debug.Log($"Responded to {vacancy.jobTitle}. Success: {isSuccess}");
     }
 
     public void ResetJobBoard()
-    { 
+    {
         foreach (Transform child in vacanciesContainer)
         {
             Destroy(child.gameObject);

@@ -9,6 +9,7 @@ public class DialogueData : ScriptableObject
         [TextArea(3, 10)]
         public string question;
         public string[] answers;
+        public int rightAnswerIndex;
     }
 
     public DialogueNode[] dialogueNodes;

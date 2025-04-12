@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System.Collections;
 using UnityEngine;
 
 public class JobApplicationWindowFade : MonoBehaviour
@@ -35,7 +34,7 @@ public class JobApplicationWindowFade : MonoBehaviour
         _rectTransform.DOScale(new Vector3(0f, 0f, 0f), _fadeTime).SetEase(Ease.InOutFlash);
         _canvasGroup.DOFade(0, _fadeTime);
     }
-    
+
     private void ItemsAnimation(GameObject item)
     {
         item.transform.localScale = Vector3.zero;
