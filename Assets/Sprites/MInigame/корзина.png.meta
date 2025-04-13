@@ -156,6 +156,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -634,7 +647,28 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_0": 7895149997434016648
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_1": 5509451889900546739
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_10": 728725540643250632
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_11": -8337816147662850521
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_12": 1788876127686173260
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_13": 4717477083584048922
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_14": 2915083904861682701
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_15": 805363988361509233
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_16": 6655879632598710699
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_17": 1598131071336787857
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_18": 7872781697748715753
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_19": -5655829626618148012
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_2": -5367138820666901938
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_20": -8038105556519326178
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_3": -7637285312562839489
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_4": 4444806690256472007
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_5": -5789025473403929231
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_6": 6939931084043864822
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_7": -1771492998879802868
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_8": -6014174519998314381
+      "\u043A\u043E\u0440\u0437\u0438\u043D\u0430_9": -4643659085464486792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

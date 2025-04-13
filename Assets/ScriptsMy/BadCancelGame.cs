@@ -1,27 +1,26 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BadCancelGame : MonoBehaviour
 {
-    [SerializeField] GameObject EndScene;
-    [SerializeField] string _sceneName;
+    [SerializeField] private string _endScene;
+    [SerializeField] private TMP_Text secondToBadEnd;
 
     void Start()
     {
-        EndScene.SetActive(false);
         StartCoroutine(SecondTime(900));
     }
 
     private IEnumerator SecondTime(int second)
     {
         yield return new WaitForSeconds(second);
+        TheEndGame();
     }
 
     private void TheEndGame()
     {
-        EndScene.SetActive(true);
-        StartCoroutine(SecondTime(15));
-        SceneManager.LoadScene(_sceneName);
+        SceneManager.LoadScene(_endScene);
     }
 }
