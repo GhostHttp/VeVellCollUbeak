@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      a-minimalist-logo-for-a-fictional-tech-startup--ab_0: -7290877645219737578
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      minimal-abstract-symbol-for-a-fictional-delivery-s_0: 1087594910211424826
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

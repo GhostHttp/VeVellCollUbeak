@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      minimalistic-logo-for-a-fictional-fintech-company-_0: 6960105783745706690
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1964,8 +1964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a03609d44c79d47afa93f5e14da4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressBar: {fileID: 869244139}
-  sceneLoad: {fileID: 1724130490}
 --- !u!1 &1976355918
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,27 +2150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5706dc97716b2474fb593609ff16892c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseEffectMusic:
-  - {fileID: 1310505689}
-  - {fileID: 2110734315}
-  - {fileID: 2143361515}
-  mouseClickAction:
-    m_Name: Mouse Click
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: ac3fefc6-5798-454f-acab-782d5dfce233
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: fd5e774b-b169-4e04-957f-a2d45b67571b
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Mouse Click
-      m_Flags: 0
-    m_Flags: 0
+  audioSourceEffects: {fileID: 0}
+  audioSourceAmbient: {fileID: 0}
+  audioSourceZoomAmbient: {fileID: 0}
+  audioSourceHRAmbient: {fileID: 0}
+  effects: []
+  Musics: []
 --- !u!82 &2006058839
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2380,7 +2363,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f8d78973b3ad9ee4d8a92c3e16ce3141, type: 3}
   m_Resource: {fileID: 8300000, guid: f8d78973b3ad9ee4d8a92c3e16ce3141, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

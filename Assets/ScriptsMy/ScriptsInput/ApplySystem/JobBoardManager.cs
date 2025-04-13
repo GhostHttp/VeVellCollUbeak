@@ -10,6 +10,7 @@ public class JobBoardManager : MonoBehaviour
     [SerializeField] private Transform vacanciesContainer;
     [SerializeField] private float checkNewVacancyInterval = 10f;
     [SerializeField] private GameObject JobBoardWindow;
+    [SerializeField] private AudioSource getApplySound;
     [Space]
 
     private List<VacancyData> availableVacancies = new List<VacancyData>();
@@ -18,6 +19,9 @@ public class JobBoardManager : MonoBehaviour
     public delegate void VacancyResponseEvent(bool isSuccess, VacancyData vacancy);
     public event Action<bool> OnVacancyResponded;
     public event Action<GameObject> OnVacancyCreated;
+    public event Action OnMinigameCreated;
+
+    private int AppysCounter;
 
     private void Start()
     {
@@ -80,7 +84,16 @@ public class JobBoardManager : MonoBehaviour
         activeVacancies.Remove(vacancy);
         // Destroy(vacancyObj);
         StartCoroutine(RespondAnimation(vacancyObj));
+        AppysCounter++;
         bool isSuccess = UnityEngine.Random.value <= vacancy.successChance;
+        if (isSuccess)
+        {
+            getApplySound.PlayOneShot(getApplySound.clip);
+        }
+        if (AppysCounter == 25 || AppysCounter == 50 || AppysCounter == 75 || AppysCounter == 100)
+        {
+            OnMinigameCreated?.Invoke();
+        }
 
         OnVacancyResponded?.Invoke(isSuccess);
 

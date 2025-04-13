@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      minimal-abstract-emblem-for-a-fake-cybersecurity-f_0: -8926037561406225906
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

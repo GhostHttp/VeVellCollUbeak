@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      a-simple-logo-for-a-made-up-fashion-brand--minimal_0: -442587918770325614
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

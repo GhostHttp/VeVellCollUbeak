@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private int currentActiveCalls = 0;
     [SerializeField] private Image callbackground;
     [SerializeField] private RectTransform callPersona;
+    [SerializeField] private AudioSource RightAnswer;
+    [SerializeField] private AudioSource BadAnswer;
 
     private int currentNodeIndex = 0;
     private int currentDialogeData = 0;
@@ -106,10 +108,12 @@ public class DialogueManager : MonoBehaviour
         if (answerIndex == dialogueData[dialogueIndex].dialogueNodes[currentNodeIndex].rightAnswerIndex)
         {
             Debug.Log("Правильный ответ");
+            RightAnswer.PlayOneShot(RightAnswer.clip);
             OnAnswerSelected?.Invoke(true);
         }
         else 
         {
+            BadAnswer.PlayOneShot(BadAnswer.clip);
             OnAnswerSelected?.Invoke(false);
         }
 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      flat-vector-minimalist-logo-for-a-fake-biotech-com_0: -8095943124332470817
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

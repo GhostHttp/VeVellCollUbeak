@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      simple-cartoon-style-logo-for-an-imaginary-product_0: 6736893712129939826
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

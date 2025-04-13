@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      minimal-logo-for-a-made-up-game-development-compan_0: 8537224678200922526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
