@@ -9,7 +9,7 @@ using System.Threading;
 public class buttoOpenScene : MonoBehaviour, IPointerClickHandler
 {
     public string nameSceneToLoad;
-    SceneLoadManager loadManager;
+    public SceneLoadManager loadManager;
 
     private void Start()
     {
