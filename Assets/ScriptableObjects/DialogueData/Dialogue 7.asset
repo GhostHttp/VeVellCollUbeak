@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6afa00c11b572b45838d7951017b380, type: 3}
   m_Name: Dialogue 7
   m_EditorClassIdentifier: 
-  DialogeBackground: {fileID: 0}
-  DialogePesona: {fileID: 0}
+  DialogeBackground: {fileID: -8635233584502960418, guid: e2e1d361d8bb2e944bfcb1ac19917acd, type: 3}
+  DialogePesona: {fileID: 4928843497043904187, guid: 77dcff55ea91bd444932b7573e9aadf9, type: 3}
   dialogueNodes:
   - question: "\u0415\u0441\u043B\u0438 \u0432\u044B \u0432\u0441\u0451 \u0435\u0449\u0451
       \u043D\u0435 \u043F\u043E\u043D\u0438\u043C\u0430\u0435\u0442\u0435 \u043A\u043E\u043D\u0446\u0435\u043F\u0442
