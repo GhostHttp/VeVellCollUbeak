@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: JobTitle
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d8c3e04a68d0b2439c3d0f794f4678e, type: 2}
+  m_sharedMaterial: {fileID: -3570979745117527807, guid: 2d8c3e04a68d0b2439c3d0f794f4678e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -442,8 +442,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9351463, y: 0.71961594}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.3066, y: 0.71961594}
+  m_SizeDelta: {x: 296.6499, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &933018028715091023
 CanvasRenderer:
@@ -475,8 +475,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u041E\u0442\u043A\u043B\u0438\u043D\u0443\u0442\u0441\u044F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d8c3e04a68d0b2439c3d0f794f4678e, type: 2}
+  m_sharedMaterial: {fileID: -3570979745117527807, guid: 2d8c3e04a68d0b2439c3d0f794f4678e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -744,8 +744,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Job description
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2d8c3e04a68d0b2439c3d0f794f4678e, type: 2}
+  m_sharedMaterial: {fileID: -3570979745117527807, guid: 2d8c3e04a68d0b2439c3d0f794f4678e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
