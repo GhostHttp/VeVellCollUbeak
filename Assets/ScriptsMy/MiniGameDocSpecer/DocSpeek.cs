@@ -9,35 +9,27 @@ public class DocSpeek : MonoBehaviour
     [SerializeField]
     private GameObject _miniGameManager;
     [SerializeField]
-    private RectTransform[] _spawnPoint;
-    [SerializeField] 
-    private ScoreGame _scoreGame;
+    private List<RectTransform> _spawnPoint = new List<RectTransform>();
     [SerializeField]
     private List<PaperSO> _paperList = new List<PaperSO>();
     [SerializeField]
 
     private void Start()
     {
-        _scoreGame.Score += 1;
         MakePaper();
-        StartCoroutine(SecondTime(Random.Range(2, 5)));
+        StartCoroutine(SecondTime(Random.Range(0.25f, 2)));
     }
 
     private void StartSpawn()
     {
-        if(_scoreGame.Score > 0)
-        {
-           StartCoroutine(SecondTime(Random.Range(2, 5)));
-        }
+        StartCoroutine(SecondTime(Random.Range(0.25f, 2)));
     }
 
     private void MakePaper()
     {
         int numberEtype = Random.Range(0, 2);
-        if ((int)(_paperList[numberEtype].etypePaper) == numberEtype)
-        {
-            GameObject objectPaper = Instantiate(_paperList[numberEtype].prefab, _spawnPoint[Random.Range(0, _spawnPoint.Length)]);
-        }
+        var randomSpawnPointIndex = Random.Range(0, _spawnPoint.Count);
+       GameObject objectPaper = Instantiate(_paperList[numberEtype].prefab, _spawnPoint[randomSpawnPointIndex]);
     }
 
     private IEnumerator SecondTime(float second)

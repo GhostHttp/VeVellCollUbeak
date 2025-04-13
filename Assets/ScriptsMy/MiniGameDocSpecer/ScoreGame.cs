@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ScoreGame : MonoBehaviour
 {
-    public float Score;
+    public int Score;
     [SerializeField]
 
     private TMP_Text _textScoreTMPro;
