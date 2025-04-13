@@ -7,19 +7,28 @@ using UnityEngine;
 public class DocSpeek : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _miniGameManager;
+    [SerializeField]
     private RectTransform[] _spawnPoint;
+    [SerializeField] 
+    private ScoreGame _scoreGame;
     [SerializeField]
     private List<PaperSO> _paperList = new List<PaperSO>();
     [SerializeField]
 
     private void Start()
     {
-        StartSpawn();
+        _scoreGame.Score += 1;
+        MakePaper();
+        StartCoroutine(SecondTime(Random.Range(2, 5)));
     }
 
     private void StartSpawn()
     {
-        StartCoroutine(SecondTime(Random.Range(2, 5)));
+        if(_scoreGame.Score > 0)
+        {
+           StartCoroutine(SecondTime(Random.Range(2, 5)));
+        }
     }
 
     private void MakePaper()
