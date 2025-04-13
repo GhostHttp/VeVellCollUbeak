@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Dialogue", menuName = "Dialogue System/Dialogue")]
 public class DialogueData : ScriptableObject
@@ -11,6 +12,9 @@ public class DialogueData : ScriptableObject
         public string[] answers;
         public int rightAnswerIndex;
     }
+
+    public Sprite DialogeBackground;
+    public GameObject DialogePesona;
 
     public DialogueNode[] dialogueNodes;
 }

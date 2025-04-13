@@ -13,12 +13,15 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private JobBoardManager _boardManager;
     [Space]
     [SerializeField] private int currentActiveCalls = 0;
+    [SerializeField] private Image callbackground;
+    [SerializeField] private RectTransform callPersona;
 
     private int currentNodeIndex = 0;
     private int currentDialogeData = 0;
 
     public event Action<bool> OnAnswerSelected;
     public event Action OnDialogueEnded;
+    private GameObject currentPersona;
 
     private void Start()
     {
@@ -41,7 +44,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentActiveCalls > 0)
         {
-            ShowDialogueNode(0);
+            var randomDialoge = UnityEngine.Random.Range(0, dialogueData.Length);
+            ShowDialogueNode(0, randomDialoge);
             dialoguePanel.SetActive(true);
         }
         else
@@ -50,23 +54,32 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void ShowDialogueNode(int nodeIndex)
+    public void ShowDialogueNode(int nodeIndex, int dialogeIndex)
     {
-        var randomDialoge = UnityEngine.Random.Range(0, dialogueData.Length);
         if (currentDialogeData > dialogueData.Length -1)
         {
             return;
         }
-        if (nodeIndex < 0 || nodeIndex >= dialogueData[randomDialoge].dialogueNodes.Length)
+        if (nodeIndex < 0 || nodeIndex >= dialogueData[dialogeIndex].dialogueNodes.Length)
         {
             Debug.LogError("Invalid node index!");
             return;
         }
 
         currentNodeIndex = nodeIndex;
-        var currentNode = dialogueData[randomDialoge].dialogueNodes[nodeIndex];
+        var currentNode = dialogueData[dialogeIndex].dialogueNodes[nodeIndex];
 
         questionText.text = currentNode.question;
+
+        var currentBackground = dialogueData[dialogeIndex].DialogeBackground;
+        var persona = dialogueData[dialogeIndex].DialogePesona;
+
+        callbackground.sprite = currentBackground;
+        if (!currentPersona)
+        {
+            currentPersona = Instantiate(persona, callPersona);
+        }
+
 
         foreach (var button in answerButtons)
         {
@@ -80,7 +93,7 @@ public class DialogueManager : MonoBehaviour
 
             answerButtons[i].onClick.RemoveAllListeners();
             int answerIndex = i;
-            answerButtons[i].onClick.AddListener(() => SelectAnswer(answerIndex, randomDialoge));
+            answerButtons[i].onClick.AddListener(() => SelectAnswer(answerIndex, dialogeIndex));
         }
 
         dialoguePanel.SetActive(true);
@@ -103,7 +116,7 @@ public class DialogueManager : MonoBehaviour
         int nextNodeIndex = currentNodeIndex + 1;
         if (nextNodeIndex < dialogueData[dialogueIndex].dialogueNodes.Length)
         {
-            ShowDialogueNode(nextNodeIndex);
+            ShowDialogueNode(nextNodeIndex, dialogueIndex);
         }
         else
         {
@@ -113,6 +126,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        Destroy(currentPersona);
         OnDialogueEnded?.Invoke();
         currentActiveCalls--;
         dialoguePanel.SetActive(false);
