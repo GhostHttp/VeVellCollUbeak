@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 402074ddc2d8c21459b510daa5750478, type: 3}
+  m_Name: Vacancy 14
+  m_EditorClassIdentifier: 
+  vacancyPrefab: {fileID: 5444163395496759503, guid: 185f84d0965d68e429289fdd9bcfcec7, type: 3}
+  jobTitle: "\u0411\u0430\u043B\u0430\u043D\u0441\u0438\u0440\u043E\u0432\u0449\u0438\u043A"
+  jobDescription: "RageQuit Entertainment-\u0418\u0445 \u0438\u0433\u0440\u044B \u0432\u044B\u0437\u044B\u0432\u0430\u044E\u0442
+    \u043B\u0451\u0433\u043A\u0443\u044E \u0438\u0441\u0442\u0435\u0440\u0438\u043A\u0443
+    \u0443 \u0438\u0433\u0440\u043E\u043A\u043E\u0432."
+  companyLogo: {fileID: -8095943124332470817, guid: 4de16cb7392b7114e9a7adfb8aafcc90, type: 3}
+  successChance: 0.5
+  minDelaySeconds: 5
+  maxDelaySeconds: 15
