@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      prompt--simple-logo-for-a-mock-travel-agency--mini_0: 9104676998067443454
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

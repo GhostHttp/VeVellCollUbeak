@@ -1,52 +1,29 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MouseMusicManager : MonoBehaviour
 {
-    public AudioSource[] mouseEffectMusic; // Массив звуковых эффектов для воспроизведения
-    public InputAction mouseClickAction;
+    public AudioSource audioSourceEffects;
+    public AudioSource audioSourceAmbient;
+    public AudioSource audioSourceZoomAmbient;
+    public AudioSource audioSourceHRAmbient;
+    public List<AudioClip> effects = new List<AudioClip>();
+    public List<AudioClip> Musics = new List<AudioClip>();
 
-    void Awake()
+    public void PlayOneShot(AudioClip clip)
     {
-        // Создаем InputAction, если она не назначена в инспекторе
-        if (mouseClickAction == null)
-        {
-            mouseClickAction = new InputAction(name: "MouseClick", binding: "<Mouse>/leftButton");
-        }
+        audioSourceEffects.PlayOneShot(clip);
     }
 
-    void OnEnable()
+    public void PlayAmbient()
     {
-        mouseClickAction.Enable(); // Включаем InputAction
+        audioSourceAmbient.Play();
     }
-
-    void OnDisable()
+    public void PlayZoomAmbient()
     {
-        mouseClickAction.Disable(); // Выключаем InputAction
-    }
-
-    public void Update()
-    {
-        if (mouseClickAction.triggered) // Используем mouseClickAction.triggered
-        {
-            Debug.Log("Кнопка нажата!");
-            StartEffectClicked();
-        }
-    }
-
-    public void StartEffectClicked()
-    {
-        // Генерируем случайный номер для выбора музыкального эффекта
-        int musicNumber = Random.Range(0, mouseEffectMusic.Length-1);
-
-        if (mouseEffectMusic[musicNumber] != null && !mouseEffectMusic[musicNumber].isPlaying)
-        {
-            mouseEffectMusic[musicNumber].Play(); // Воспроизводим звук
-        }
-        else
-        {
-            Debug.Log("Ошибка: выбранный звук уже воспроизводится или не инициализирован."); // Логгируем ошибку
-        }
+        audioSourceZoomAmbient.Play();
     }
 }
 

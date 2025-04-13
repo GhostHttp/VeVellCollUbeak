@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      prompt--cartoonish-minimalist-logo-for-an-imaginar_0: 6030197956309728873
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

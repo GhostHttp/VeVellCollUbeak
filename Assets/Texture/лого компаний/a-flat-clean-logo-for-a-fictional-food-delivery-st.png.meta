@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      a-flat-clean-logo-for-a-fictional-food-delivery-st_0: -2354477776363597317
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

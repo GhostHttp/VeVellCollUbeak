@@ -18,15 +18,17 @@ public class DragPaper : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     {
         rb.gravityScale = 0f;
         rb.linearVelocity = Vector3.zero;
+        rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        dragRectT.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        dragRectT.anchoredPosition += eventData.delta;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         rb.gravityScale = gravityScale;
+        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 }

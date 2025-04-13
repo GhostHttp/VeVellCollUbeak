@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      flat-vector-style-minimalist-icon-for-a-fake-menta_0: 6366564409634514908
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      minimal-cartoon-style-logo-for-a-creative-agency--_0: 9161602773983524815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

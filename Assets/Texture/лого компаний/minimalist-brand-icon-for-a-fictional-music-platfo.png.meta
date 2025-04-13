@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      minimalist-brand-icon-for-a-fictional-music-platfo_0: 1441096567440680934
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

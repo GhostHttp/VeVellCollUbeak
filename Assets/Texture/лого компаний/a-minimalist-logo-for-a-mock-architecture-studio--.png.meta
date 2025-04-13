@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      a-minimalist-logo-for-a-mock-architecture-studio--_0: -8096321417297057159
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
