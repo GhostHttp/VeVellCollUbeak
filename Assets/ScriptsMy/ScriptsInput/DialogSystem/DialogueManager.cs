@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private RectTransform callPersona;
     [SerializeField] private AudioSource RightAnswer;
     [SerializeField] private AudioSource BadAnswer;
+    [SerializeField] private AuidioTranstition _transtition;
 
     private int currentNodeIndex = 0;
     private int currentDialogeData = 0;
@@ -130,6 +131,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        _transtition.ChangeClip();
         Destroy(currentPersona);
         OnDialogueEnded?.Invoke();
         currentActiveCalls--;

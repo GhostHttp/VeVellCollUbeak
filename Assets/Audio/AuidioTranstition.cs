@@ -5,7 +5,7 @@ public class AuidioTranstition : MonoBehaviour
 {
     public AudioSource as1, as2;
 
-    float defaultVolume = 0.2f;
+    float defaultVolume = 0.1f;
     float transitionTime = 1.25f;
     bool Iss1IsPlaying = true;
 

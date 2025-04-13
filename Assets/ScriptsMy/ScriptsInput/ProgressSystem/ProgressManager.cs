@@ -33,14 +33,14 @@ public class ProgressManager : MonoBehaviour
 
     private void ChangeProgressApply(bool isSuccess)
     {
-        _progressPercent += 0.5f;
+        _progressPercent += 3f;
         _progressBar.fillAmount = _progressPercent / 100;
         OnProgressCahnged?.Invoke(_progressPercent);
     }
 
     public void AddProgress()
     {
-        _progressPercent += 0.5f;
+        _progressPercent += 3f;
         _progressBar.fillAmount = _progressPercent / 100;
         OnProgressCahnged?.Invoke(_progressPercent);
     }
@@ -49,11 +49,11 @@ public class ProgressManager : MonoBehaviour
     {
         if (isRight)
         {
-            _progressPercent += 1f;
+            _progressPercent += 5f;
         }
         else 
         {
-            _progressPercent -= 1f;
+            _progressPercent -= 5f;
         }
         _progressBar.fillAmount = _progressPercent / 100;
         OnProgressCahnged?.Invoke(_progressPercent);

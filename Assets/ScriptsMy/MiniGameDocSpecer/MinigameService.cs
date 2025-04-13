@@ -27,9 +27,16 @@ public class MinigameService : MonoBehaviour
         _timerText.text = "Осталось времени " + _secoundsToEnd.ToString();
     }
 
-    public void StartSpawn()
+    private void StartSpawn()
     {
         StartCoroutine(SpawnDelay(Random.Range(0.25f, 2)));
+    }
+
+    public void NewGameSpawn()
+    {
+        _secoundsToEnd = 30;
+        StartCoroutine(SpawnDelay(Random.Range(0.25f, 2)));
+        _timerText.text = "Осталось времени " + _secoundsToEnd.ToString();
     }
 
     private void MakePaper()
